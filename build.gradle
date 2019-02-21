@@ -47,6 +47,9 @@ tasks.withType(JavaCompile) {
     targetCompatibility = JavaVersion.VERSION_1_8
 }
 
+task stage(dependsOn: ['build', 'clean'])
+build.mustRunAfter clean
+
 repositories {
     jcenter()
     mavenLocal()
