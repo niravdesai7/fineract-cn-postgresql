@@ -60,6 +60,7 @@ stage.dependsOn(copyToLib)
 repositories {
     jcenter()
     mavenLocal()
+    mavenCentral()
 }
 
 dependencies {
