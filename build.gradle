@@ -24,7 +24,6 @@ buildscript {
 plugins {
     id 'com.github.hierynomus.license' version '0.13.1'
     id("org.nosphere.apache.rat") version "0.3.1"
-    id 'maven-publish'
 }
 
 group 'org.apache.fineract.cn'
@@ -48,20 +47,9 @@ tasks.withType(JavaCompile) {
     targetCompatibility = JavaVersion.VERSION_1_8
 }
 
-task stage(dependsOn: ['build', 'clean'])
-build.mustRunAfter clean
-
-task copyToLib(type: Copy) {
-    into "$buildDir/libs"
-    from(configurations.compile)
-}
-
-stage.dependsOn(copyToLib)
-
 repositories {
     jcenter()
     mavenLocal()
-    mavenCentral()
 }
 
 dependencies {
@@ -74,7 +62,7 @@ dependencies {
             [group: 'org.flywaydb', name: 'flyway-core', version: '4.0.1'],
             [group: 'org.postgresql', name: 'postgresql', version: '42.2.5'],
             [group: 'org.apache.openjpa', name: 'openjpa', version: '3.0.0']
-            )
+    )
     testCompile(
             [group: 'org.springframework.boot', name: 'spring-boot-starter-test', version: versions.springboot]
     )
