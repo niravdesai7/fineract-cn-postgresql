@@ -73,6 +73,15 @@ dependencies {
             [group: 'org.flywaydb', name: 'flyway-core', version: '4.0.1'],
             [group: 'org.postgresql', name: 'postgresql', version: '42.2.5'],
             [group: 'org.apache.openjpa', name: 'openjpa', version: '3.0.0']
+            
+            [group: 'org.apache.activemq', name: 'activemq-spring', version: '5.13.2'],
+            [group: 'com.google.code.gson', name: 'gson', version: versions.gson],
+            [group: 'io.mifos.core', name: 'lang', version: versions.frameworklangversion],
+            [group: 'io.mifos.core', name: 'async', version: versions.frameworkasyncversion],
+            [group: 'io.mifos.core', name: 'cassandra', version: versions.frameworkcassandraversion]
+            [group: 'org.apache.fineract.cn', name: 'lang', version: versions.frameworklangversion],
+            [group: 'org.apache.fineract.cn', name: 'async', version: versions.frameworkasyncversion],
+            [group: 'org.apache.fineract.cn', name: 'cassandra', version: versions.frameworkcassandraversion]
     )
     testCompile(
             [group: 'org.springframework.boot', name: 'spring-boot-starter-test', version: versions.springboot]
