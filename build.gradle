@@ -43,6 +43,7 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	implementation 'org.springframework.boot:spring-boot-starter-jdbc'
 	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
+	[group: 'com.jolbox', name: 'bonecp', version: '0.8.0.RELEASE'],
 	runtimeOnly 'org.postgresql:postgresql'
 	runtimeOnly 'org.webjars:jquery:3.3.1-1'
 	runtimeOnly 'org.webjars:jquery-ui:1.12.1'
