@@ -43,6 +43,23 @@ apply plugin: 'maven'
 apply plugin: 'maven-publish'
 apply plugin: 'license'
 
+task stage(dependsOn: ['build', 'clean'])
+build.mustRunAfter clean
+
+task copyToLib(type: Copy) {
+    into "$buildDir/libs"
+    from(configurations.compile)
+}
+
+stage.dependsOn(copyToLib)
+
+gradle.taskGraph.whenReady {
+  taskGraph ->
+    if (taskGraph.hasTask(stage)) {
+      test.enabled = false
+    }
+}
+
 tasks.withType(JavaCompile) {
     sourceCompatibility = JavaVersion.VERSION_1_8
     targetCompatibility = JavaVersion.VERSION_1_8
