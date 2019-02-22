@@ -44,6 +44,11 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-jdbc'
 	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
 	[group: 'com.jolbox', name: 'bonecp', version: '0.8.0.RELEASE'],
+	[group: 'org.apache.fineract.cn', name: 'lang', version: versions.frameworklang],
+	[group: 'org.springframework.boot', name: 'spring-boot-starter-data-jpa', version: versions.springboot],
+	    [group: 'org.flywaydb', name: 'flyway-core', version: '4.0.1'],
+            [group: 'org.postgresql', name: 'postgresql', version: '42.2.5'],
+            [group: 'org.apache.openjpa', name: 'openjpa', version: '3.0.0']
 	runtimeOnly 'org.postgresql:postgresql'
 	runtimeOnly 'org.webjars:jquery:3.3.1-1'
 	runtimeOnly 'org.webjars:jquery-ui:1.12.1'
